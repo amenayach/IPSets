@@ -119,18 +119,27 @@ namespace IPSet
 
         private void ValidatePositions()
         {
-            if (pnlHolder.Controls.Count > 0)
+            try
             {
 
-                var pt = ControlMod.CartesianCtrl(pnlHolder.Width, new Size(560, 140), pnlHolder.Controls.Count);
-
-                var i = 0;
-
-                foreach (Control ctl in pnlHolder.Controls)
+                if (pnlHolder.Controls.Count > 0)
                 {
-                    ctl.Location = pt[i++];
-                }
 
+                    var pt = ControlMod.CartesianCtrl(pnlHolder.Width, new Size(560, 140), pnlHolder.Controls.Count);
+
+                    var i = 0;
+
+                    foreach (Control ctl in pnlHolder.Controls)
+                    {
+                        ctl.Location = pt[i++];
+                    }
+
+                }
+            }
+            catch 
+            {
+                // Ignored
+                throw;
             }
         }
 
