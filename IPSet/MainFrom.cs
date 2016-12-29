@@ -139,7 +139,6 @@ namespace IPSet
             catch 
             {
                 // Ignored
-                throw;
             }
         }
 
